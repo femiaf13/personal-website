@@ -7,6 +7,8 @@ use crate::{
     error_template::{AppError, ErrorTemplate},
     pages::welcome::Welcome,
 };
+pub const APP_BAR_HEIGHT: Height = Height::Em(3.5);
+pub const LOGO_HEIGHT: Height = Height::Em(2.5);
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -32,7 +34,19 @@ pub fn App() -> impl IntoView {
                 }
             }>
                 <Routes>
-                    <Route path="" view=|| view! { <Welcome/> }/>
+                    <Route path="" view=|| view! {
+                        <Box style="display: flex; flex-direction: column; align-items: center; min-width: 100%">
+                            <AppBar height=APP_BAR_HEIGHT style="z-index: 1; background: var(--brand-color); color: white;">
+                                <img style="width: auto; margin: 0 0;" style:height=move || format!("{}", LOGO_HEIGHT) src="./Computer_Dude_Logo.png"/>
+                                <Stack orientation=StackOrientation::Horizontal spacing=Size::Em(1.0) style="margin-right: 1em">
+                                    <LinkExt href="https://valeen.rocks" target=LinkExtTarget::Blank>
+                                        <Icon id="github-icon" icon=icondata::BsGithub/>
+                                    </LinkExt>
+                                </Stack>
+                            </AppBar>
+                            <Welcome/> 
+                        </Box>
+                    }/>
                 </Routes>
             </Router>
         </Root>

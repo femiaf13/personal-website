@@ -18,9 +18,11 @@ body {
 @import "./leptonic/leptonic-themes";
 
 [data-theme="light"] {
-    --brand-color: #3061aa;
+    --brand-color: #8a0ea3;
+    --link-color: white;
 }
 
 [data-theme="dark"] {
     --brand-color: #3061aa;
+    // --brand-color: #8a0ea3;
 }

@@ -17,7 +17,7 @@ pub fn JobCard(
     job: JobCardInfo
 ) -> impl IntoView {
     view! {
-        <div class="card w-50">
+        <Box style="background: var(--card-background-color)">
             <div class="card-header">{job.start_date} - {job.end_date}</div>
             <div class="card-body">
                 <h5 class="card-title">{job.company}</h5>
@@ -29,6 +29,6 @@ pub fn JobCard(
                     </Button>
                 </LinkExt>
             </div>
-        </div>
+        </Box>
     }
 }

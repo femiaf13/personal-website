@@ -18,10 +18,10 @@ pub fn JobCard(
 ) -> impl IntoView {
     view! {
         <Box style="background: var(--card-background-color)">
-            <div class="card-header">{job.start_date} - {job.end_date}</div>
-            <div class="card-body">
-                <h5 class="card-title">{job.company}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{job.job_title}</h6>
+            <div><b>{job.company}</b></div>
+            <div style="font-size: 14px; padding-left: 10px;">{job.start_date} - {job.end_date}</div>
+            <div style="font-size: 14px; padding-left: 10px;">{job.job_title}</div>
+            <div>
                 // TODO: Make the links right
                 <LinkExt href=job.link.clone() target=LinkExtTarget::Blank>
                     <Button on_click=move |_| {}>

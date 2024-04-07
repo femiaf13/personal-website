@@ -19,8 +19,8 @@ pub fn JobCard(
     view! {
         <Box style="background: var(--card-background-color)">
             <div><b>{job.company}</b></div>
-            <div style="font-size: 14px; padding-left: 10px;">{job.start_date} - {job.end_date}</div>
-            <div style="font-size: 14px; padding-left: 10px;">{job.job_title}</div>
+            <div style="font-size: 14px; padding-left: 10px; color: var(--grey-5)"><i>{job.start_date} - {job.end_date}</i></div>
+            <div style="font-size: 14px; padding-left: 10px; color: var(--grey-5)"><i>{job.job_title}</i></div>
             <div>
                 // TODO: Make the links right
                 <LinkExt href=job.link.clone() target=LinkExtTarget::Blank>

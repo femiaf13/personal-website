@@ -23,9 +23,11 @@ pub fn JobCard(
                 <h5 class="card-title">{job.company}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{job.job_title}</h6>
                 // TODO: Make the links right
-                <a href="https://valeen.rocks" class="btn btn-primary">
-                    {job.link}
-                </a>
+                <LinkExt href=job.link.clone() target=LinkExtTarget::Blank>
+                    <Button on_click=move |_| {}>
+                        {job.link}
+                    </Button>
+                </LinkExt>
             </div>
         </div>
     }

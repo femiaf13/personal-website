@@ -51,7 +51,7 @@ pub fn Welcome() -> impl IntoView {
                 key=|job| job.id.clone()
                 // renders each item to a view
                 children=move |job| view! {
-                    <JobCard job=job/>
+                    <Card><JobCard job=job/></Card>
                 }
             />
         </Box>

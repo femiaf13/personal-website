@@ -16,14 +16,14 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Meta name="charset" content="UTF-8"/>
-        <Meta name="description" content="Leptonic CSR template"/>
+        <Meta name="description" content="Portfolio Website in Leptos"/>
         <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <Meta name="theme-color" content="#e66956"/>
 
         <Stylesheet id="leptos" href="/pkg/leptonic-template-ssr.css"/>
         <Stylesheet href="https://fonts.googleapis.com/css?family=Roboto&display=swap"/>
 
-        <Title text="Leptonic CSR template"/>
+        <Title text="Portfolio Website"/>
 
         <Root default_theme=LeptonicTheme::default()>
             <Router fallback=|| {
@@ -33,19 +33,19 @@ pub fn App() -> impl IntoView {
                     <ErrorTemplate outside_errors/>
                 }
             }>
+                <Box style="display: flex; flex-direction: column; align-items: center; min-width: 100%">
+                    <AppBar height=APP_BAR_HEIGHT style="z-index: 1; background: var(--brand-color); color: white;">
+                        <img style="width: auto; margin: 0 0;" style:height=move || format!("{}", LOGO_HEIGHT) src="./Computer_Dude_Logo.png"/>
+                        <Stack orientation=StackOrientation::Horizontal spacing=Size::Em(1.0) style="margin-right: 1em">
+                            <LinkExt href="https://valeen.rocks" target=LinkExtTarget::Blank>
+                                <Icon id="github-icon" icon=icondata::BsGithub/>
+                            </LinkExt>
+                        </Stack>
+                    </AppBar>
+                </Box>
                 <Routes>
                     <Route path="" view=|| view! {
-                        <Box style="display: flex; flex-direction: column; align-items: center; min-width: 100%">
-                            <AppBar height=APP_BAR_HEIGHT style="z-index: 1; background: var(--brand-color); color: white;">
-                                <img style="width: auto; margin: 0 0;" style:height=move || format!("{}", LOGO_HEIGHT) src="./Computer_Dude_Logo.png"/>
-                                <Stack orientation=StackOrientation::Horizontal spacing=Size::Em(1.0) style="margin-right: 1em">
-                                    <LinkExt href="https://valeen.rocks" target=LinkExtTarget::Blank>
-                                        <Icon id="github-icon" icon=icondata::BsGithub/>
-                                    </LinkExt>
-                                </Stack>
-                            </AppBar>
-                            <Welcome/> 
-                        </Box>
+                        <Welcome/> 
                     }/>
                 </Routes>
             </Router>

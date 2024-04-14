@@ -20,7 +20,9 @@ body {
 [data-theme="light"] {
     --brand-color: #8a0ea3;
     --link-color: white;
-    --card-background-color: var(--grey-2)
+    // --card-background-color: var(--grey-2)
+    // --card-background-color: #241734;
+    --card-background-color: #2E2157;
 }
 
 [data-theme="dark"] {

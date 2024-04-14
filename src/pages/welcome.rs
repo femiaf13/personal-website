@@ -35,9 +35,8 @@ pub fn Welcome() -> impl IntoView {
     // TODO: Rest of my jobs and also loop more elegantly maybe?
 
     view! {
-        <Box style="display: flex; flex-direction: column; flex-grow: 1; align-items: center; padding: 1em; min-height: fit-content; min-width: 100%">
-            <H2>"Welcome to Leptonic"</H2>
-            <ThemeToggle off=LeptonicTheme::Light on=LeptonicTheme::Dark/>
+        <Box style="display: flex; flex-direction: column; flex-grow: 1; align-items: center; padding: 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365);">
+            <img style="width: auto; margin: 0 0;" style:height="200px" src="./synth-sun.svg"/>
             <For
                 // a function that returns the items we're iterating over; a signal is fine
                 each=move || resume.get().into_iter()

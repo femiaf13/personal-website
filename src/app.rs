@@ -20,7 +20,7 @@ pub fn App() -> impl IntoView {
         <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <Meta name="theme-color" content="#e66956"/>
 
-        <Stylesheet id="leptos" href="/pkg/leptonic-template-ssr.css"/>
+        // <Stylesheet id="leptos" href="/pkg/leptonic-template-ssr.css"/>
         <Stylesheet href="https://fonts.googleapis.com/css?family=Roboto&display=swap"/>
 
         <Title text="Portfolio Website"/>

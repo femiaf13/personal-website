@@ -33,7 +33,7 @@ pub fn Welcome() -> impl IntoView {
 
     set_resume.update(move |resume| {
         resume.push(JobCardInfo {
-            id: 1,
+            id: 2,
             company: String::from("Precision Optical Technologies"),
             job_title: String::from("Software Engineer 2"),
             start_date: String::from("2/18"),
@@ -46,10 +46,12 @@ pub fn Welcome() -> impl IntoView {
 
     view! {
         <Box style="flex-grow: 1; padding: 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); z-index: 1;">
+            <h2 style="color: var(--std-text-bright);">My digital resume!</h2>
             <Grid spacing=Size::Em(0.6)>
                 <Row>
-                    <Col md=8 sm=6 xs=12 h_align=ColAlign::Center>
+                    <Col md=9 sm=9 xs=9 h_align=ColAlign::Center>
                         <img style="width: auto; margin: 0 0;" style:height="33vh" class="sun" src="./synth-sun.svg"/>
+                        // <Skeleton animated=false>"Item 1"</Skeleton>
                     </Col>
                 </Row>
                 <For

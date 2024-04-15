@@ -17,13 +17,18 @@ body {
 
 .sun {
     // position: absolute;
-    // z-index: 0;
+    z-index: 0;
     // right: 50px;
     justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 3.5em - 1em);
+    opacity: 0.6;
 }
 
-leptonic-card .job-card {
+leptonic-card {
     width: 250px;
+    z-index: 1;
 }
 
 @import "./leptonic/leptonic-themes";

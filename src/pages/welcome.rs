@@ -2,8 +2,9 @@ use leptonic::prelude::*;
 use leptos::*;
 use leptos_use::use_media_query;
 
-use crate::job::job_card::*;
 use crate::job::job_info::JobInfo;
+use crate::job::job_card::*;
+use crate::job::job_tab::*;
 
 /// Welcome page displays my resume in a large screen and mobile screen format
 #[component]
@@ -76,7 +77,7 @@ pub fn Welcome() -> impl IntoView {
     });
 
     view! {
-        <Box style="flex-grow: 1; padding: 1em 1em 1em 0em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); z-index: 1;">
+        <Box style="flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); z-index: 1;">
             <img style="margin: 0 0;" class="sun" src="./synth-sun.svg"/>
             <h2 style="color: var(--std-text-bright); text-align: center; z-index: 1; position: relative;">Digital Resume</h2>
             <Grid spacing=Size::Em(0.6)>
@@ -108,7 +109,7 @@ pub fn Welcome() -> impl IntoView {
                             key=|job| job.id.clone()
                             // renders each item to a view
                             children=move |job| view! {
-                                <Tab name=job.id.to_string() label=job.company.into_view()>"Content of tab 1"</Tab>
+                                <JobTab job=job/>
                             }
                         />
                     </Tabs>

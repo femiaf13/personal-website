@@ -97,9 +97,19 @@ pub fn Welcome() -> impl IntoView {
                         /> 
                     }
                 >
-                <p style="color: var(--std-text-bright);">TODO: Come up with a better big screen solution</p>
+                    <Tabs mount=Mount::Once>
+                        <For
+                            // a function that returns the items we're iterating over; a signal is fine
+                            each=move || resume.get().into_iter()
+                            // a unique key for each item
+                            key=|job| job.id.clone()
+                            // renders each item to a view
+                            children=move |job| view! {
+                                <Tab name=job.id.to_string() label=job.company.into_view()>"Content of tab 1"</Tab>
+                            }
+                        />
+                    </Tabs>
                 </Show>
-                
             </Grid>
         </Box>
     }

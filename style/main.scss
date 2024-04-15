@@ -31,6 +31,10 @@ leptonic-card {
     z-index: 1;
 }
 
+leptonic-tabs {
+    z-index: 1;
+}
+
 @import "./leptonic/leptonic-themes";
 
 [data-theme="light"] {

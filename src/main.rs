@@ -3,7 +3,7 @@ use leptos::*;
 mod app;
 mod error_template;
 mod pages;
-mod job_card;
+mod job;
 // use job_card::job_card::*;
 
 use crate::app::*;

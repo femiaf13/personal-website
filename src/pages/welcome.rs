@@ -2,15 +2,17 @@ use leptonic::prelude::*;
 use leptos::*;
 use leptos_use::use_media_query;
 
-use crate::job_card::job_card::*;
+use crate::job::job_card::*;
+use crate::job::job_info::JobInfo;
+
 /// Welcome page displays my resume in a large screen and mobile screen format
 #[component]
 pub fn Welcome() -> impl IntoView {
-    let (resume, set_resume) = create_signal::<Vec<JobCardInfo>>(Vec::new());
+    let (resume, set_resume) = create_signal::<Vec<JobInfo>>(Vec::new());
     let is_large_screen = use_media_query("(min-width: 720px)");
 
     set_resume.update(move |resume| {
-        resume.push(JobCardInfo {
+        resume.push(JobInfo {
             id: 0,
             company: String::from("Precision Optical Technologies"),
             job_title: String::from("Senior Software Engineer"),
@@ -23,7 +25,7 @@ pub fn Welcome() -> impl IntoView {
     });
 
     set_resume.update(move |resume| {
-        resume.push(JobCardInfo {
+        resume.push(JobInfo {
             id: 1,
             company: String::from("Datto"),
             job_title: String::from("Software Engineer 2"),
@@ -36,7 +38,7 @@ pub fn Welcome() -> impl IntoView {
     });
 
     set_resume.update(move |resume| {
-        resume.push(JobCardInfo {
+        resume.push(JobInfo {
             id: 2,
             company: String::from("Precision Optical Technologies"),
             job_title: String::from("Software Engineer 2"),
@@ -49,7 +51,7 @@ pub fn Welcome() -> impl IntoView {
     });
     // TODO: Rest of my jobs and also loop more elegantly maybe?
     set_resume.update(move |resume| {
-        resume.push(JobCardInfo {
+        resume.push(JobInfo {
             id: 3,
             company: String::from("Precision Optical Technologies"),
             job_title: String::from("Software Engineer 2"),
@@ -61,7 +63,7 @@ pub fn Welcome() -> impl IntoView {
         })
     });
     set_resume.update(move |resume| {
-        resume.push(JobCardInfo {
+        resume.push(JobInfo {
             id: 4,
             company: String::from("Precision Optical Technologies"),
             job_title: String::from("Software Engineer 2"),
@@ -91,7 +93,7 @@ pub fn Welcome() -> impl IntoView {
                             children=move |job| view! {
                                 <Row>
                                     <Col h_align=ColAlign::Center style="padding-left: 1em;">
-                                        <Card><JobCardSmall job=job/></Card>
+                                        <Card><JobCard job=job/></Card>
                                     </Col>
                                 </Row>
                             }

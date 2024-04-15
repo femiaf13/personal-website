@@ -1,22 +1,11 @@
 use leptos::*;
 use leptonic::prelude::*;
 
-#[derive(Default)]
-#[derive(Debug, Clone)]
-pub struct JobCardInfo {
-    pub id: u32,
-    pub company: String,
-    pub job_title: String,
-    pub start_date: String,
-    pub end_date: String,
-    pub description: String,
-    // TODO: Content should be like a vec<String> or something
-    pub link: String,
-}
+use crate::job::job_info::JobInfo;
 
 #[component]
-pub fn JobCardSmall(
-    job: JobCardInfo
+pub fn JobCard(
+    job: JobInfo
 ) -> impl IntoView {
     view! {
         <Box style="background: var(--card-background-color); color: var(--std-text-bright);" class="job-card">

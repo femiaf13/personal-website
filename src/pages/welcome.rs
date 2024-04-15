@@ -3,7 +3,7 @@ use leptos::*;
 use leptos_use::use_media_query;
 
 use crate::job_card::job_card::*;
-
+/// Welcome page displays my resume in a large screen and mobile screen format
 #[component]
 pub fn Welcome() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobCardInfo>>(Vec::new());
@@ -80,6 +80,7 @@ pub fn Welcome() -> impl IntoView {
             <Grid spacing=Size::Em(0.6)>
                 <Show
                     when=move || { is_large_screen.get() }
+                    // Small screens get the card view
                     fallback=move || view! { 
                         <For
                             // a function that returns the items we're iterating over; a signal is fine

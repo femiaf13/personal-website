@@ -24,6 +24,7 @@ body {
     width: 100vw;
     height: calc(100vh - 3.5em - 1em);
     opacity: 0.6;
+    pointer-events: none;
 }
 
 leptonic-card {
@@ -33,6 +34,13 @@ leptonic-card {
 
 leptonic-tabs {
     z-index: 1;
+    max-width: 100vw;
+    margin: auto;
+}
+
+leptonic-tab-selector {
+    max-width: 300px;
+    overflow-wrap: break-word;
 }
 
 @import "./leptonic/leptonic-themes";

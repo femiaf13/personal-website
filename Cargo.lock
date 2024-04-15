@@ -345,6 +345,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "frank-femia-personal-website"
+version = "0.1.0"
+dependencies = [
+ "console_error_panic_hook",
+ "leptonic",
+ "leptos",
+ "leptos-use",
+ "leptos_meta",
+ "leptos_router",
+ "thiserror",
+ "tracing",
+ "tracing-subscriber",
+ "tracing-wasm",
+]
+
+[[package]]
 name = "futures"
 version = "0.3.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -896,22 +912,6 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
-]
-
-[[package]]
-name = "leptonic-template-csr"
-version = "0.1.0"
-dependencies = [
- "console_error_panic_hook",
- "leptonic",
- "leptos",
- "leptos-use",
- "leptos_meta",
- "leptos_router",
- "thiserror",
- "tracing",
- "tracing-subscriber",
- "tracing-wasm",
 ]
 
 [[package]]

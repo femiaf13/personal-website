@@ -6,6 +6,7 @@ use crate::job_card::job_card::*;
 #[component]
 pub fn Welcome() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobCardInfo>>(Vec::new());
+    let options: JobCardInfo = Default::default();
 
     set_resume.update(move |resume| {
         resume.push(JobCardInfo {
@@ -16,6 +17,7 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("Present"),
             // TODO: Make the links right
             link: String::from("https://valeen.rocks"),
+            description: String::from("I've done a ton of work making sure that a new prooduct called OpenPath happens.")
         })
     });
 
@@ -28,6 +30,7 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("10/22"),
             // TODO: Make the links right
             link: String::from("https://valeen.rocks"),
+            description: String::from("Contributed to both the backend and frontend of a new product(Datto Secure Edge)")
         })
     });
 
@@ -40,6 +43,7 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("12/21"),
             // TODO: Make the links right
             link: String::from("https://valeen.rocks"),
+            ..Default::default()
         })
     });
     // TODO: Rest of my jobs and also loop more elegantly maybe?
@@ -52,6 +56,7 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("12/21"),
             // TODO: Make the links right
             link: String::from("https://valeen.rocks"),
+            ..Default::default()
         })
     });
     set_resume.update(move |resume| {
@@ -63,6 +68,7 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("12/21"),
             // TODO: Make the links right
             link: String::from("https://valeen.rocks"),
+            ..Default::default()
         })
     });
 

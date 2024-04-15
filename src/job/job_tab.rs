@@ -3,15 +3,19 @@ use leptonic::prelude::*;
 
 use crate::job::job_info::JobInfo;
 
+/// Specific implementation of Tab for a job
 #[component]
 pub fn JobTab(
+    /// The job to display in the tab
     job: JobInfo
 ) -> impl IntoView {
     let label: String = format!("{} ({}-{})", job.company, job.start_date, job.end_date);
 
     view! {
         <Tab name=job.id.to_string() label=label.into_view()>
-            "Content of tab 1"
+            <b>{job.job_title.clone()}</b>
+            <br/>
+            <p>{job.description.clone()}</p>
         </Tab>
     }
 }

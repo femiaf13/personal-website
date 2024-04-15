@@ -15,7 +15,7 @@ pub struct JobCardInfo {
 }
 
 #[component]
-pub fn JobCard(
+pub fn JobCardSmall(
     job: JobCardInfo
 ) -> impl IntoView {
     view! {

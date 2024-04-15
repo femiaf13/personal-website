@@ -1,12 +1,13 @@
 use leptonic::prelude::*;
 use leptos::*;
+use leptos_use::use_media_query;
 
 use crate::job_card::job_card::*;
 
 #[component]
 pub fn Welcome() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobCardInfo>>(Vec::new());
-    let options: JobCardInfo = Default::default();
+    let is_large_screen = use_media_query("(min-width: 720px)");
 
     set_resume.update(move |resume| {
         resume.push(JobCardInfo {
@@ -77,20 +78,28 @@ pub fn Welcome() -> impl IntoView {
             <img style="margin: 0 0;" class="sun" src="./synth-sun.svg"/>
             <h2 style="color: var(--std-text-bright); text-align: center; z-index: 1; position: relative;">Digital Resume</h2>
             <Grid spacing=Size::Em(0.6)>
-                <For
-                    // a function that returns the items we're iterating over; a signal is fine
-                    each=move || resume.get().into_iter()
-                    // a unique key for each item
-                    key=|job| job.id.clone()
-                    // renders each item to a view
-                    children=move |job| view! {
-                        <Row>
-                            <Col h_align=ColAlign::Start style="padding-left: 1em;">
-                                <Card><JobCard job=job/></Card>
-                            </Col>
-                        </Row>
+                <Show
+                    when=move || { is_large_screen.get() }
+                    fallback=move || view! { 
+                        <For
+                            // a function that returns the items we're iterating over; a signal is fine
+                            each=move || resume.get().into_iter()
+                            // a unique key for each item
+                            key=|job| job.id.clone()
+                            // renders each item to a view
+                            children=move |job| view! {
+                                <Row>
+                                    <Col h_align=ColAlign::Center style="padding-left: 1em;">
+                                        <Card><JobCardSmall job=job/></Card>
+                                    </Col>
+                                </Row>
+                            }
+                        /> 
                     }
-                />
+                >
+                <p style="color: var(--std-text-bright);">TODO: Come up with a better big screen solution</p>
+                </Show>
+                
             </Grid>
         </Box>
     }

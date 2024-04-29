@@ -19,9 +19,9 @@ pub fn Welcome() -> impl IntoView {
             job_title: String::from("Senior Software Engineer"),
             start_date: String::from("10/22"),
             end_date: String::from("Present"),
-            // TODO: Make the links right
-            link: String::from("https://valeen.rocks"),
-            description: String::from("I've done a ton of work making sure that a new prooduct called OpenPath happens.")
+            link: String::from("https://www.precisionot.com/product-category/openpath-pon/"),
+            description: String::from("Team lead and architect of a greenfield product breaking into an entirely new space for the company."),
+            tech_stack: String::from("Tech stack of Angular, Node.js and Python.")
         })
     });
 
@@ -33,8 +33,10 @@ pub fn Welcome() -> impl IntoView {
             start_date: String::from("1/22"),
             end_date: String::from("10/22"),
             // TODO: Make the links right
-            link: String::from("https://valeen.rocks"),
-            description: String::from("Contributed to both the backend and frontend of a new product(Datto Secure Edge)")
+            // link: String::from("https://valeen.rocks"),
+            description: String::from("Was a full-stack engineer working on the launch of a new product(Datto Secure Edge)"),
+            tech_stack: String::from("Tech stack of PHP and Javascript."),
+            ..Default::default()
         })
     });
 
@@ -42,36 +44,13 @@ pub fn Welcome() -> impl IntoView {
         resume.push(JobInfo {
             id: 2,
             company: String::from("Precision Optical Technologies"),
-            job_title: String::from("Software Engineer 2"),
+            job_title: String::from("Senior Software Engineer"),
             start_date: String::from("2/18"),
             end_date: String::from("12/21"),
             // TODO: Make the links right
-            link: String::from("https://valeen.rocks"),
-            ..Default::default()
-        })
-    });
-    // TODO: Rest of my jobs and also loop more elegantly maybe?
-    set_resume.update(move |resume| {
-        resume.push(JobInfo {
-            id: 3,
-            company: String::from("Precision Optical Technologies"),
-            job_title: String::from("Software Engineer 2"),
-            start_date: String::from("2/18"),
-            end_date: String::from("12/21"),
-            // TODO: Make the links right
-            link: String::from("https://valeen.rocks"),
-            ..Default::default()
-        })
-    });
-    set_resume.update(move |resume| {
-        resume.push(JobInfo {
-            id: 4,
-            company: String::from("Precision Optical Technologies"),
-            job_title: String::from("Software Engineer 2"),
-            start_date: String::from("2/18"),
-            end_date: String::from("12/21"),
-            // TODO: Make the links right
-            link: String::from("https://valeen.rocks"),
+            // link: String::from("https://valeen.rocks"),
+            description: String::from("One of 3 engineers early in a startup. Over the course of my tenure I was reponisble for firmware, desktop applications, mobile applications, and RESTful backend server powering all of it."),
+            tech_stack: String::from("Tech stack of Node.js and Python."),
             ..Default::default()
         })
     });

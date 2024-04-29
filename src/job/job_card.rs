@@ -14,14 +14,15 @@ pub fn JobCard(
             <div style="font-size: 14px; padding-left: 10px;"><i>{job.job_title}</i></div>
             <br/>
             <p>{job.description}</p>
-            <div>
-                // TODO: Make the links right
-                <LinkExt href=job.link.clone() target=LinkExtTarget::Blank>
-                    <Button on_click=move |_| {}>
-                        {job.link}
-                    </Button>
-                </LinkExt>
-            </div>
+            <p>{job.tech_stack}</p>
+            // <div>
+            //     // TODO: Make the links right
+            //     <LinkExt href=job.link.clone() target=LinkExtTarget::Blank>
+            //         <Button on_click=move |_| {}>
+            //             {job.link}
+            //         </Button>
+            //     </LinkExt>
+            // </div>
         </Box>
     }
 }

@@ -6,6 +6,7 @@ pub struct JobInfo {
     pub start_date: String,
     pub end_date: String,
     pub description: String,
+    pub tech_stack: String,
     // TODO: Content should be like a vec<String> or something
     pub link: String,
 }

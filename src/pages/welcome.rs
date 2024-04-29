@@ -20,7 +20,7 @@ pub fn Welcome() -> impl IntoView {
             start_date: String::from("10/22"),
             end_date: String::from("Present"),
             link: String::from("https://www.precisionot.com/product-category/openpath-pon/"),
-            description: String::from("Team lead and architect of a greenfield product breaking into an entirely new space for the company."),
+            description: String::from("Team lead and architect of a greenfield product breaking into an entirely new space for the company. Worked with management to define requirements."),
             tech_stack: String::from("Tech stack of Angular, Node.js and Python.")
         })
     });

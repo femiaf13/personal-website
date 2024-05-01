@@ -6,7 +6,7 @@ use crate::job::job_card::*;
 use crate::job::job_info::JobInfo;
 use crate::job::job_tab::*;
 
-/// Welcome page displays my resume in a large screen and mobile screen format
+/// Resume page displays my resume in a large screen and mobile screen format
 #[component]
 pub fn Resume() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobInfo>>(Vec::new());

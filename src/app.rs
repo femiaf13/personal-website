@@ -5,7 +5,7 @@ use leptos_router::*;
 
 use crate::{
     error_template::{AppError, ErrorTemplate},
-    pages::welcome::Welcome,
+    pages::welcome::Resume,
 };
 pub const APP_BAR_HEIGHT: Height = Height::Em(3.5);
 pub const LOGO_HEIGHT: Height = Height::Em(2.5);
@@ -49,7 +49,7 @@ pub fn App() -> impl IntoView {
                 </Box>
                 <Routes>
                     <Route path="*" view=|| view! {
-                        <Welcome/>
+                        <Resume/>
                     }/>
                     // <Route path="/about" view=|| view! {
                     //     About page TBD

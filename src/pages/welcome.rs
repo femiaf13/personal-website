@@ -8,7 +8,7 @@ use crate::job::job_tab::*;
 
 /// Welcome page displays my resume in a large screen and mobile screen format
 #[component]
-pub fn Welcome() -> impl IntoView {
+pub fn Resume() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobInfo>>(Vec::new());
     let is_large_screen = use_media_query("(min-width: 720px)");
 

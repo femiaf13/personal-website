@@ -5,6 +5,7 @@ use leptos_router::*;
 
 use crate::{
     error_template::{AppError, ErrorTemplate},
+    pages::about::About,
     pages::resume::Resume,
 };
 pub const APP_BAR_HEIGHT: Height = Height::Em(3.5);
@@ -65,12 +66,7 @@ pub fn App() -> impl IntoView {
                 </Box>
                 <Routes>
                     <Route path="*" view=|| view! { <Resume/> }/>
-                // <Route path="/about" view=|| view! {
-                // About page TBD
-                // <LinkExt href="https://leptos.dev" target=LinkExtTarget::Blank>
-                // <span style="padding: 5px;">Made with</span><Icon class="header-icon" icon=icondata::SiLeptos/>
-                // </LinkExt>
-                // }/>
+                    <Route path="/about" view=|| view! { <About/> }/>
                 </Routes>
             </Router>
         </Root>

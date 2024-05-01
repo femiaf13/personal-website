@@ -20,6 +20,7 @@ pub fn JobTab(
                     .map(|n| view! { <li>{n}</li>})
                     .collect_view()}
             </ul>
+            <p>{job.tech_stack.clone()}</p>
         </Tab>
     }
 }

@@ -13,7 +13,12 @@ pub fn JobCard(
             <div style="font-size: 14px; padding-left: 10px;"><i>{job.start_date} - {job.end_date}</i></div>
             <div style="font-size: 14px; padding-left: 10px;"><i>{job.job_title}</i></div>
             <br/>
-            <p>{job.description}</p>
+            // <p>{job.description}</p>
+            <ul>
+                {job.description.clone().iter()
+                    .map(|n| view! { <li>{n}</li>})
+                    .collect_view()}
+            </ul>
             <p>{job.tech_stack}</p>
             // <div>
             //     // TODO: Make the links right

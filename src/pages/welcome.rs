@@ -13,6 +13,9 @@ pub fn Welcome() -> impl IntoView {
     let is_large_screen = use_media_query("(min-width: 720px)");
 
     set_resume.update(move |resume| {
+        let mut description: Vec<String> = vec![];
+        description.push(String::from("Team lead and architect of a greenfield product breaking into an entirely new space for the company"));
+        description.push(String::from("Worked with management to define requirements"));
         resume.push(JobInfo {
             id: 0,
             company: String::from("Precision Optical Technologies"),
@@ -20,12 +23,14 @@ pub fn Welcome() -> impl IntoView {
             start_date: String::from("10/22"),
             end_date: String::from("Present"),
             link: String::from("https://www.precisionot.com/product-category/openpath-pon/"),
-            description: String::from("Team lead and architect of a greenfield product breaking into an entirely new space for the company. Worked with management to define requirements."),
+            description: description,
             tech_stack: String::from("Tech stack of Angular, Node.js and Python.")
         })
     });
 
     set_resume.update(move |resume| {
+        let mut description: Vec<String> = vec![];
+        description.push(String::from("Was a full-stack engineer working on the launch of a new product(Datto Secure Edge)"));
         resume.push(JobInfo {
             id: 1,
             company: String::from("Datto"),
@@ -34,13 +39,16 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("10/22"),
             // TODO: Make the links right
             // link: String::from("https://valeen.rocks"),
-            description: String::from("Was a full-stack engineer working on the launch of a new product(Datto Secure Edge)"),
+            description: description,
             tech_stack: String::from("Tech stack of PHP and Javascript."),
             ..Default::default()
         })
     });
 
     set_resume.update(move |resume| {
+        let mut description: Vec<String> = vec![];
+        description.push(String::from("One of 3 engineers early in a startup"));
+        description.push(String::from(" Over the course of my tenure I was reponisble for firmware, desktop applications, mobile applications, and RESTful backend server powering all of it"));
         resume.push(JobInfo {
             id: 2,
             company: String::from("Precision Optical Technologies"),
@@ -49,7 +57,7 @@ pub fn Welcome() -> impl IntoView {
             end_date: String::from("12/21"),
             // TODO: Make the links right
             // link: String::from("https://valeen.rocks"),
-            description: String::from("One of 3 engineers early in a startup. Over the course of my tenure I was reponisble for firmware, desktop applications, mobile applications, and RESTful backend server powering all of it."),
+            description: description,
             tech_stack: String::from("Tech stack of Node.js and Python."),
             ..Default::default()
         })

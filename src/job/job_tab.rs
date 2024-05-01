@@ -15,7 +15,11 @@ pub fn JobTab(
         <Tab name=job.id.to_string() label=label.into_view()>
             <b>{job.job_title.clone()}</b>
             <br/>
-            <p>{job.description.clone()}</p>
+            <ul>
+                {job.description.clone().iter()
+                    .map(|n| view! { <li>{n}</li>})
+                    .collect_view()}
+            </ul>
         </Tab>
     }
 }

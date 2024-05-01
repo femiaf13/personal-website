@@ -29,17 +29,33 @@ pub fn App() -> impl IntoView {
             <Router fallback=|| {
                 let mut outside_errors = Errors::default();
                 outside_errors.insert_with_default_key(AppError::NotFound);
-                view! {
-                    <ErrorTemplate outside_errors/>
-                }
+                view! { <ErrorTemplate outside_errors/> }
             }>
                 <Box style="display: flex; flex-direction: column; align-items: center; min-width: 100%">
-                    <AppBar height=APP_BAR_HEIGHT style="z-index: 1; background: var(--brand-color); color: white;">
-                        <img style="width: auto; margin: 0 0;" style:height=move || format!("{}", LOGO_HEIGHT) src="./Computer_Dude_Logo.png"/>
-                        <Stack orientation=StackOrientation::Horizontal spacing=Size::Em(1.0) style="margin-right: 1em">
-                            
-                            <LinkExt href="https://www.linkedin.com/in/frank-femia-iii" target=LinkExtTarget::Blank>
-                                <Icon id="linkedin-icon" class="header-icon" icon=icondata::BsLinkedin/>
+                    <AppBar
+                        height=APP_BAR_HEIGHT
+                        style="z-index: 1; background: var(--brand-color); color: white;"
+                    >
+                        <img
+                            style="width: auto; margin: 0 0;"
+                            style:height=move || format!("{}", LOGO_HEIGHT)
+                            src="./Computer_Dude_Logo.png"
+                        />
+                        <Stack
+                            orientation=StackOrientation::Horizontal
+                            spacing=Size::Em(1.0)
+                            style="margin-right: 1em"
+                        >
+
+                            <LinkExt
+                                href="https://www.linkedin.com/in/frank-femia-iii"
+                                target=LinkExtTarget::Blank
+                            >
+                                <Icon
+                                    id="linkedin-icon"
+                                    class="header-icon"
+                                    icon=icondata::BsLinkedin
+                                />
                             </LinkExt>
                             <LinkExt href="https://github.com/femiaf13" target=LinkExtTarget::Blank>
                                 <Icon id="github-icon" class="header-icon" icon=icondata::BsGithub/>
@@ -48,15 +64,13 @@ pub fn App() -> impl IntoView {
                     </AppBar>
                 </Box>
                 <Routes>
-                    <Route path="*" view=|| view! {
-                        <Resume/>
-                    }/>
-                    // <Route path="/about" view=|| view! {
-                    //     About page TBD
-                    //     <LinkExt href="https://leptos.dev" target=LinkExtTarget::Blank>
-                    //         <span style="padding: 5px;">Made with</span><Icon class="header-icon" icon=icondata::SiLeptos/>
-                    //     </LinkExt>
-                    // }/>
+                    <Route path="*" view=|| view! { <Resume/> }/>
+                // <Route path="/about" view=|| view! {
+                // About page TBD
+                // <LinkExt href="https://leptos.dev" target=LinkExtTarget::Blank>
+                // <span style="padding: 5px;">Made with</span><Icon class="header-icon" icon=icondata::SiLeptos/>
+                // </LinkExt>
+                // }/>
                 </Routes>
             </Router>
         </Root>

@@ -1,11 +1,12 @@
-use leptos::*;
 use leptonic::prelude::*;
+use leptos::*;
 
 use crate::job::job_info::JobInfo;
 
 #[component]
 pub fn JobCard(
-    job: JobInfo
+    /// The job to display in the tab
+    job: JobInfo,
 ) -> impl IntoView {
     view! {
         <Box style="background: var(--card-background-color); color: var(--std-text-bright);" class="job-card">

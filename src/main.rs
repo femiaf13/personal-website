@@ -2,8 +2,8 @@ use leptos::*;
 
 mod app;
 mod error_template;
-mod pages;
 mod job;
+mod pages;
 // use job_card::job_card::*;
 
 use crate::app::*;

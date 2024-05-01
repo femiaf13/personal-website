@@ -1,5 +1,5 @@
-use leptos::*;
 use leptonic::prelude::*;
+use leptos::*;
 
 use crate::job::job_info::JobInfo;
 
@@ -7,7 +7,7 @@ use crate::job::job_info::JobInfo;
 #[component]
 pub fn JobTab(
     /// The job to display in the tab
-    job: JobInfo
+    job: JobInfo,
 ) -> impl IntoView {
     let label: String = format!("{} ({}-{})", job.company, job.start_date, job.end_date);
 

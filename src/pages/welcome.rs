@@ -16,6 +16,8 @@ pub fn Welcome() -> impl IntoView {
         let mut description: Vec<String> = vec![];
         description.push(String::from("Team lead and architect of a greenfield product breaking into an entirely new space for the company"));
         description.push(String::from("Worked with management to define requirements"));
+        description.push(String::from("Created a container-based infrastructure for easy development and deployment"));
+        description.push(String::from("Maintained a robust end-to-end test suite with the Robot Framework"));
         resume.push(JobInfo {
             id: 0,
             company: String::from("Precision Optical Technologies"),
@@ -30,14 +32,15 @@ pub fn Welcome() -> impl IntoView {
 
     set_resume.update(move |resume| {
         let mut description: Vec<String> = vec![];
-        description.push(String::from("Was a full-stack engineer working on the launch of a new product(Datto Secure Edge)"));
+        description.push(String::from("Full-stack engineer working on the launch of a new product(Datto Secure Edge)"));
+        description.push(String::from("Delivered alpha and beta releases on-time and received positive feedback"));
+        description.push(String::from("Drove incremental change to legacy frontend codebaseS"));
         resume.push(JobInfo {
             id: 1,
             company: String::from("Datto"),
             job_title: String::from("Software Engineer 2"),
             start_date: String::from("1/22"),
             end_date: String::from("10/22"),
-            // TODO: Make the links right
             // link: String::from("https://valeen.rocks"),
             description: description,
             tech_stack: String::from("Tech stack of PHP and Javascript."),
@@ -48,14 +51,15 @@ pub fn Welcome() -> impl IntoView {
     set_resume.update(move |resume| {
         let mut description: Vec<String> = vec![];
         description.push(String::from("One of 3 engineers early in a startup"));
-        description.push(String::from(" Over the course of my tenure I was reponisble for firmware, desktop applications, mobile applications, and RESTful backend server powering all of it"));
+        description.push(String::from("Responsible for firmware, desktop applications, mobile applications, and RESTful backend server powering all of it"));
+        description.push(String::from("Regularly communicated with stakeholders to ensure software deliveries met expectations"));
+        description.push(String::from("Mentored interns, helping them to become self-sufficient contributors to the team"));
         resume.push(JobInfo {
             id: 2,
             company: String::from("Precision Optical Technologies"),
             job_title: String::from("Senior Software Engineer"),
             start_date: String::from("2/18"),
             end_date: String::from("12/21"),
-            // TODO: Make the links right
             // link: String::from("https://valeen.rocks"),
             description: description,
             tech_stack: String::from("Tech stack of Node.js and Python."),

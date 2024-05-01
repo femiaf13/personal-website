@@ -47,7 +47,12 @@ pub fn App() -> impl IntoView {
                             spacing=Size::Em(1.0)
                             style="margin-right: 1em"
                         >
-
+                            <Link href="/about">
+                                <H3>About</H3>
+                            </Link>
+                            <Link href="/">
+                                <H3>Resume</H3>
+                            </Link>
                             <LinkExt
                                 href="https://www.linkedin.com/in/frank-femia-iii"
                                 target=LinkExtTarget::Blank
@@ -61,6 +66,12 @@ pub fn App() -> impl IntoView {
                             <LinkExt href="https://github.com/femiaf13" target=LinkExtTarget::Blank>
                                 <Icon id="github-icon" class="header-icon" icon=icondata::BsGithub/>
                             </LinkExt>
+                            // TODO: Make a drawer work in mobile screen sizes. Look at leptonic site for docs on how to do this well.
+                            // <Drawer side=DrawerSide::Right shown=true style="padding: 0.5em; height: 19.5em; overflow: scroll; position: absolute; top: 0; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;">
+                            //     <Stack spacing=Size::Em(0.5)>
+                            //         {(0..8).map(|_| view! { <Skeleton height=Size::Em(3.0)/> }).collect_view()}
+                            //     </Stack>
+                            // </Drawer>
                         </Stack>
                     </AppBar>
                 </Box>

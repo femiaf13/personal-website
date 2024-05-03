@@ -72,7 +72,6 @@ pub fn App() -> impl IntoView {
                                     </button>
                                 }
                             >
-                                {show_drawer}
                                 <NavContents></NavContents>
                             </Show>
                         </Stack>

@@ -14,7 +14,7 @@ pub fn About() -> impl IntoView {
             shown=true 
             style="padding: 0.25em; overflow: scroll; position: absolute; top: 3.5em; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;"
         >
-            <Stack spacing=Size::Em(0.5)>
+            <Stack spacing=Size::Em(0.6)>
                 <NavContents></NavContents>
             </Stack>
         </Drawer>

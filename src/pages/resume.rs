@@ -92,7 +92,7 @@ pub fn Resume() -> impl IntoView {
     view! {
         <Drawer 
             side=DrawerSide::Right
-            shown=Signal::derive( move || ctx.show_drawer.get()) 
+            shown=Signal::derive( move || ctx.show_drawer.get() && !ctx.is_large_screen.get()) 
             style="padding: 0.25em; overflow: scroll; position: absolute; top: 3.5em; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;"
         >
             <Stack spacing=Size::Em(0.6)>

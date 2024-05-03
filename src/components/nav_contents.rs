@@ -6,10 +6,10 @@ use leptos::*;
 pub fn NavContents() -> impl IntoView {
     view! {
         <Link href="/about">
-            <H3>About</H3>
+            <h3>About</h3>
         </Link>
         <Link href="/">
-            <H3>Resume</H3>
+            <h3>Resume</h3>
         </Link>
         <LinkExt
             href="https://www.linkedin.com/in/frank-femia-iii"

@@ -10,14 +10,15 @@ pub fn About() -> impl IntoView {
 
     view! {
         <Drawer 
-            side=DrawerSide::Right 
-            shown=true 
+            side=DrawerSide::Right
+            shown=Signal::derive( move || ctx.show_drawer.get()) 
             style="padding: 0.25em; overflow: scroll; position: absolute; top: 3.5em; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;"
         >
             <Stack spacing=Size::Em(0.6)>
                 <NavContents></NavContents>
             </Stack>
         </Drawer>
+        
         <Box style="display: flex; flex-direction: column; align-items: center; flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); color: var(--std-text-bright); z-index: 1;">
             <img style="margin: 0 0;" class="sun" src="./synth-sun.svg"/>
             <H1>About Frank</H1>

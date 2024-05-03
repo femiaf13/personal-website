@@ -4,7 +4,7 @@ use leptos::*;
 use crate::job::job_card::*;
 use crate::job::job_info::JobInfo;
 use crate::job::job_tab::*;
-use crate::AppLayoutContext;
+use crate::{components::nav_contents::NavContents, AppLayoutContext};
 
 /// Resume page displays my resume in a large screen and mobile screen format
 #[component]
@@ -90,6 +90,15 @@ pub fn Resume() -> impl IntoView {
     });
 
     view! {
+        <Drawer 
+            side=DrawerSide::Right
+            shown=Signal::derive( move || ctx.show_drawer.get()) 
+            style="padding: 0.25em; overflow: scroll; position: absolute; top: 3.5em; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;"
+        >
+            <Stack spacing=Size::Em(0.6)>
+                <NavContents></NavContents>
+            </Stack>
+        </Drawer>
         <Box style="flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); z-index: 1;">
             <img style="margin: 0 0;" class="sun" src="./synth-sun.svg"/>
             <h2 style="color: var(--std-text-bright); text-align: center; z-index: 1; position: relative;">Digital Resume</h2>

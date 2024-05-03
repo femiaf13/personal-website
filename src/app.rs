@@ -67,7 +67,7 @@ pub fn App() -> impl IntoView {
                                 when=move || { is_large_screen.get() }
                                 // Small screens get the card view
                                 fallback=move || view! {
-                                    <button style="background: content-box; border: none;" on:click={move |_| set_show_drawer.set(true)} >
+                                    <button style="background: content-box; border: none;" on:click={move |_| set_show_drawer.update(|value| *value = !*value)} >
                                         <Icon class="header-icon" icon=icondata::ChMenuHamburger/>
                                     </button>
                                 }

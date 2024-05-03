@@ -2,11 +2,13 @@ use leptonic::prelude::*;
 use leptos::*;
 use leptos_meta::{provide_meta_context, Meta, Stylesheet, Title};
 use leptos_router::*;
+use leptos_use::use_media_query;
 
 use crate::{
     error_template::{AppError, ErrorTemplate},
     pages::about::About,
     pages::resume::Resume,
+    components::nav_contents::NavContents
 };
 pub const APP_BAR_HEIGHT: Height = Height::Em(3.5);
 pub const LOGO_HEIGHT: Height = Height::Em(2.5);
@@ -14,6 +16,8 @@ pub const LOGO_HEIGHT: Height = Height::Em(2.5);
 #[component]
 pub fn App() -> impl IntoView {
     provide_meta_context();
+    let is_large_screen = use_media_query("(min-width: 720px)");
+    provide_context(is_large_screen);
 
     view! {
         <Meta name="charset" content="UTF-8"/>
@@ -47,31 +51,34 @@ pub fn App() -> impl IntoView {
                             spacing=Size::Em(1.0)
                             style="margin-right: 1em"
                         >
-                            <Link href="/about">
-                                <H3>About</H3>
-                            </Link>
-                            <Link href="/">
-                                <H3>Resume</H3>
-                            </Link>
-                            <LinkExt
-                                href="https://www.linkedin.com/in/frank-femia-iii"
-                                target=LinkExtTarget::Blank
+                            <Show
+                                when=move || { is_large_screen.get() }
+                                // Small screens get the card view
+                                fallback=move || view! {
+                                    <Icon class="header-icon" icon=icondata::ChMenuHamburger/> 
+                                }
                             >
-                                <Icon
-                                    id="linkedin-icon"
-                                    class="header-icon"
-                                    icon=icondata::BsLinkedin
-                                />
-                            </LinkExt>
-                            <LinkExt href="https://github.com/femiaf13" target=LinkExtTarget::Blank>
-                                <Icon id="github-icon" class="header-icon" icon=icondata::BsGithub/>
-                            </LinkExt>
-                            // TODO: Make a drawer work in mobile screen sizes. Look at leptonic site for docs on how to do this well.
-                            // <Drawer side=DrawerSide::Right shown=true style="padding: 0.5em; height: 19.5em; overflow: scroll; position: absolute; top: 0; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;">
-                            //     <Stack spacing=Size::Em(0.5)>
-                            //         {(0..8).map(|_| view! { <Skeleton height=Size::Em(3.0)/> }).collect_view()}
-                            //     </Stack>
-                            // </Drawer>
+                                // <Link href="/about">
+                                //     <H3>About</H3>
+                                // </Link>
+                                // <Link href="/">
+                                //     <H3>Resume</H3>
+                                // </Link>
+                                // <LinkExt
+                                //     href="https://www.linkedin.com/in/frank-femia-iii"
+                                //     target=LinkExtTarget::Blank
+                                // >
+                                //     <Icon
+                                //         id="linkedin-icon"
+                                //         class="header-icon"
+                                //         icon=icondata::BsLinkedin
+                                //     />
+                                // </LinkExt>
+                                // <LinkExt href="https://github.com/femiaf13" target=LinkExtTarget::Blank>
+                                //     <Icon id="github-icon" class="header-icon" icon=icondata::BsGithub/>
+                                // </LinkExt>
+                                <NavContents></NavContents>
+                            </Show>
                         </Stack>
                     </AppBar>
                 </Box>

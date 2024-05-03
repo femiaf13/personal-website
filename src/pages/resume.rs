@@ -1,6 +1,5 @@
 use leptonic::prelude::*;
 use leptos::*;
-use leptos_use::use_media_query;
 
 use crate::job::job_card::*;
 use crate::job::job_info::JobInfo;
@@ -10,7 +9,7 @@ use crate::job::job_tab::*;
 #[component]
 pub fn Resume() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobInfo>>(Vec::new());
-    let is_large_screen = use_media_query("(min-width: 720px)");
+    let is_large_screen = use_context::<Signal<bool>>().expect("to have found the thing");
 
     set_resume.update(move |resume| {
         let mut description: Vec<String> = vec![];

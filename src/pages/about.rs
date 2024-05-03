@@ -1,12 +1,23 @@
 use leptonic::prelude::*;
 use leptos::*;
 
+use crate::components::nav_contents::NavContents;
+
 /// About page displays stuff about me!
 #[component]
 pub fn About() -> impl IntoView {
-    // let is_large_screen = use_media_query("(min-width: 720px)");
+    let is_large_screen = use_context::<Signal<bool>>();
 
     view! {
+        <Drawer 
+            side=DrawerSide::Right 
+            shown=true 
+            style="padding: 0.25em; overflow: scroll; position: absolute; top: 3.5em; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;"
+        >
+            <Stack spacing=Size::Em(0.5)>
+                <NavContents></NavContents>
+            </Stack>
+        </Drawer>
         <Box style="display: flex; flex-direction: column; align-items: center; flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); color: var(--std-text-bright); z-index: 1;">
             <img style="margin: 0 0;" class="sun" src="./synth-sun.svg"/>
             <H1>About Frank</H1>

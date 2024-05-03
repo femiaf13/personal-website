@@ -4,6 +4,7 @@ mod app;
 mod error_template;
 mod job;
 mod pages;
+mod components;
 // use job_card::job_card::*;
 
 use crate::app::*;

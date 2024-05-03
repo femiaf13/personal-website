@@ -96,7 +96,7 @@ pub fn Resume() -> impl IntoView {
             style="padding: 0.25em; overflow: scroll; position: absolute; top: 3.5em; right: 0; background-color: var(--brand-color); border-left: 1px solid gray;"
         >
             <Stack spacing=Size::Em(0.6)>
-                <NavContents></NavContents>
+                <NavContents vertical=true></NavContents>
             </Stack>
         </Drawer>
         <Box style="flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); z-index: 1;">

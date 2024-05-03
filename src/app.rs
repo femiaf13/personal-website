@@ -72,7 +72,7 @@ pub fn App() -> impl IntoView {
                                     </button>
                                 }
                             >
-                                <NavContents></NavContents>
+                                <NavContents vertical=false></NavContents>
                             </Show>
                         </Stack>
                     </AppBar>

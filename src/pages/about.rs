@@ -22,11 +22,11 @@ pub fn About() -> impl IntoView {
                             <H4>"Things I do for fun"</H4>
                             <ul>
                                 <li>"Dungeons and Dragons"</li>
-                                <li>"Warhammer"</li>
                                 <li>"Maintain a homelab"</li>
                                 <li>"Read (currently working on Brandon Sanderson)"</li>
                                 <li>"Trying to replicate my grandma's cooking"</li>
                                 <li>"Basic DiY home improvement"</li>
+                                <li>"Warhammer"</li>
                             </ul>
                         </Card>
                     </Col>
@@ -40,15 +40,24 @@ pub fn About() -> impl IntoView {
                                     </ul>
                                 <li>"An old NUC from 2016"</li>
                                     <ul>
-                                        <li>Runs 2 <LinkExt href="https://leptos.dev" target=LinkExtTarget::Blank>Foundry VTT</LinkExt> servers</li>
+                                        <li>"Runs 2 "<LinkExt href="https://foundryvtt.com/" target=LinkExtTarget::Blank>"Foundry VTT"</LinkExt>" servers"</li>
                                     </ul>
                                 <li>"An old laptop repurposed as a server"</li>
                                     <ul>
-                                        <li>"This runs my tailscale exit node and my pi-hole server"</li>
+                                        <li>
+                                            "This runs my "
+                                            <LinkExt href="https://tailscale.com" target=LinkExtTarget::Blank>tailscale exit node</LinkExt>
+                                            and my 
+                                            <LinkExt href="https://pi-hole.net" target=LinkExtTarget::Blank>pi-hole server</LinkExt>
+                                        </li>
                                     </ul>
                                 <li>"The equivalent of a low-end gaming desktop"</li>
                                     <ul>
-                                        <li>This runs my reverse proxy, a <LinkExt href="https://mealie.io" target=LinkExtTarget::Blank>private recipe book</LinkExt>, a Matrix server, and a Nextcloud instance</li>
+                                        <li>"This runs my reverse proxy,"
+                                            <LinkExt href="https://mealie.io" target=LinkExtTarget::Blank>"a private recipe book"</LinkExt>,
+                                            <LinkExt href="https://matrix.org" target=LinkExtTarget::Blank>"a Matrix server"</LinkExt>,
+                                            <LinkExt href="https://nextcloud.com/" target=LinkExtTarget::Blank>" and a Nextcloud instance"</LinkExt>
+                                        </li>
                                     </ul>
                             </ul>
                         </Card>

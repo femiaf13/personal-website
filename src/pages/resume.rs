@@ -32,7 +32,7 @@ pub fn Resume() -> impl IntoView {
             job_title: String::from("Senior Software Engineer"),
             start_date: String::from("10/22"),
             end_date: String::from("Present"),
-            link: String::from("https://www.precisionot.com/product-category/openpath-pon/"),
+            // link: String::from("https://www.precisionot.com/product-category/openpath-pon/"),
             description: description,
             tech_stack: String::from("Tech stack of Angular, Node.js and Python.")
         })

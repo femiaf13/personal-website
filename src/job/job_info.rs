@@ -7,5 +7,5 @@ pub struct JobInfo {
     pub end_date: String,
     pub description: Vec<String>,
     pub tech_stack: String,
-    pub link: String,
+    // pub link: String,
 }

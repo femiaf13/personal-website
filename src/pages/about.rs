@@ -1,12 +1,12 @@
 use leptonic::prelude::*;
 use leptos::*;
 
-use crate::components::nav_contents::NavContents;
+use crate::{components::nav_contents::NavContents, AppLayoutContext};
 
 /// About page displays stuff about me!
 #[component]
 pub fn About() -> impl IntoView {
-    let is_large_screen = use_context::<Signal<bool>>();
+    let ctx = expect_context::<AppLayoutContext>();
 
     view! {
         <Drawer 

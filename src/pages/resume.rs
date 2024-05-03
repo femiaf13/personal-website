@@ -4,12 +4,13 @@ use leptos::*;
 use crate::job::job_card::*;
 use crate::job::job_info::JobInfo;
 use crate::job::job_tab::*;
+use crate::AppLayoutContext;
 
 /// Resume page displays my resume in a large screen and mobile screen format
 #[component]
 pub fn Resume() -> impl IntoView {
     let (resume, set_resume) = create_signal::<Vec<JobInfo>>(Vec::new());
-    let is_large_screen = use_context::<Signal<bool>>().expect("to have found the thing");
+    let ctx = expect_context::<AppLayoutContext>();
 
     set_resume.update(move |resume| {
         let mut description: Vec<String> = vec![];
@@ -94,7 +95,7 @@ pub fn Resume() -> impl IntoView {
             <h2 style="color: var(--std-text-bright); text-align: center; z-index: 1; position: relative;">Digital Resume</h2>
             <Grid spacing=Size::Em(0.6)>
                 <Show
-                    when=move || { is_large_screen.get() }
+                    when=move || { ctx.is_large_screen.get() }
                     // Small screens get the card view
                     fallback=move || view! {
                         <For

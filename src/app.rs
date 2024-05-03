@@ -13,12 +13,23 @@ use crate::{
 pub const APP_BAR_HEIGHT: Height = Height::Em(3.5);
 pub const LOGO_HEIGHT: Height = Height::Em(2.5);
 
+#[derive(Debug, Clone, Copy)]
+pub struct AppLayoutContext {
+    pub is_large_screen: Signal<bool>,
+    pub show_drawer: ReadSignal<bool>,
+}
+
 #[component]
 pub fn App() -> impl IntoView {
     provide_meta_context();
-    let is_large_screen = use_media_query("(min-width: 720px)");
-    provide_context(is_large_screen);
+    let is_large_screen:Signal<bool> = use_media_query("(min-width: 720px)");
     let (show_drawer, set_show_drawer) = create_signal(false);
+
+    let ctx = AppLayoutContext {
+        is_large_screen,
+        show_drawer
+    };
+    provide_context(ctx);
 
     view! {
         <Meta name="charset" content="UTF-8"/>

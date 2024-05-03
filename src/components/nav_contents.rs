@@ -11,10 +11,10 @@ pub fn NavContents(
         <Show
             when=move || !vertical
             fallback=move || view! {
-                <Link href="/about">
+                <Link href="/">
                     <h3>About</h3>
                 </Link>
-                <Link href="/">
+                <Link href="/resume">
                     <h3>Resume</h3>
                 </Link>
                 <LinkExt
@@ -37,10 +37,10 @@ pub fn NavContents(
                 </LinkExt>
             }
         >     
-            <Link href="/about">
+            <Link href="/">
                 <h3>About</h3>
             </Link>
-            <Link href="/">
+            <Link href="/resume">
                 <h3>Resume</h3>
             </Link>
             <LinkExt

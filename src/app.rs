@@ -78,8 +78,8 @@ pub fn App() -> impl IntoView {
                     </AppBar>
                 </Box>
                 <Routes>
-                    <Route path="*" view=|| view! { <Resume/> }/>
-                    <Route path="/about" view=|| view! { <About/> }/>
+                    <Route path="*" view=|| view! { <About/> }/>
+                    <Route path="/resume" view=|| view! { <Resume/> }/>
                 </Routes>
             </Router>
         </Root>

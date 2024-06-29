@@ -99,7 +99,7 @@ pub fn Resume() -> impl IntoView {
                 <NavContents vertical=true></NavContents>
             </Stack>
         </Drawer>
-        <Box style="flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); z-index: 1;">
+        <Box style="display: flex; flex-direction: column; align-items: center; flex-grow: 1; padding: 1em 1em 1em 1em; min-height: fit-content; min-width: 100%; background: linear-gradient(to bottom, #023788, 70%, #FF4365); color: var(--std-text-bright); z-index: 1;">
             <img style="margin: 0 0;" class="sun" src="./synth-sun.svg"/>
             <h2 style="color: var(--std-text-bright); text-align: center; z-index: 1; position: relative;">Digital Resume</h2>
             <Grid spacing=Size::Em(0.6)>

@@ -40,6 +40,7 @@ pub fn About() -> impl IntoView {
                                 <li>"Trying to replicate my grandma's cooking"</li>
                                 <li>"Basic DiY home improvement"</li>
                                 <li>"Warhammer"</li>
+                                <li>"Making a game! "<LinkExt href="https://valeen.rocks/proto/proto.html" target=LinkExtTarget::Blank>"(Click me to try it!)"</LinkExt></li>
                             </ul>
                         </Card>
                     </Col>
@@ -82,7 +83,7 @@ pub fn About() -> impl IntoView {
                                 <li>"Javascript/Typescript"</li>
                                 <li>"Python"</li>
                                 <li>"Docker/Podman"</li>
-                                <li>"Bash scripting"</li>
+                                <li>"Go"</li>
                                 <li>"C (but only if I have to)"</li>
                                 <li>"Rust but only because of this website"</li>
                             </ul>
